@@ -28,7 +28,7 @@ document.getElementById('assign-santas').addEventListener('click', async () => {
   const assignments = assignSantas(participants);
 
   // Send assignments to the server to send emails
-  const response = await fetch('http://127.0.0.1:3000/assign', {
+  const response = await fetch('https://santaback-xta6.onrender.com/assign', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(assignments),
