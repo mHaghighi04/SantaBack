@@ -2,6 +2,12 @@ let participants = [];
 
 // Add a participant
 document.getElementById('add-participant').addEventListener('click', () => {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
   if (!name || !email) {
     alert('Both name and email are required.');
     return;
@@ -11,8 +17,7 @@ document.getElementById('add-participant').addEventListener('click', () => {
     return;
   }
       
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
+  
 
   if (name && email) {
     participants.push({ name, email });
