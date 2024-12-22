@@ -2,10 +2,6 @@ let participants = [];
 
 // Add a participant
 document.getElementById('add-participant').addEventListener('click', () => {
-  if (!/\S+@\S+\.\S+/.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
   if (!name || !email) {
     alert('Both name and email are required.');
     return;
