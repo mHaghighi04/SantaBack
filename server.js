@@ -6,6 +6,12 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
+const morgan = require('morgan');
+
+// Use morgan to log requests to the console
+app.use(morgan('combined'));
+
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
