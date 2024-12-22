@@ -2,6 +2,19 @@ let participants = [];
 
 // Add a participant
 document.getElementById('add-participant').addEventListener('click', () => {
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  if (!name || !email) {
+    alert('Both name and email are required.');
+    return;
+  }
+  if (participants.some(p => p.email === email)) {
+    alert('This email has already been added.');
+    return;
+  }
+      
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
 
@@ -43,10 +56,16 @@ document.getElementById('assign-santas').addEventListener('click', async () => {
 
 // Randomize assignments
 function assignSantas(participants) {
-  const shuffled = [...participants];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  let shuffled;
+  let valid = false;
+
+  while (!valid) {
+    shuffled = [...participants];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    valid = participants.every((p, i) => p.name !== shuffled[i].name);
   }
 
   return participants.map((participant, i) => ({
