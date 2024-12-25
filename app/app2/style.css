@@ -20,3 +20,10 @@
     border-radius: 15px;
     cursor: pointer;
 }
+
+.return{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+  }
