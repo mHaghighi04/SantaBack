@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your Name</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    form {
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 5px;
+    }
+    .return{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Submit Your Name</h1>
+  <form id="nameForm">
+    <input type="text" id="nameInput" placeholder="Enter your name" required />
+    <button type="submit">Submit</button>
+  </form>
+  <div id="nameList"></div>
+  <div>
+    <button onclick="window.location.href='../../'" id="return" class="return">go back</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
