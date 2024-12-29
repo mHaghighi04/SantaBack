@@ -22,7 +22,11 @@ const db = mysql.createConnection({
   user: 'root',      // Replace with your MySQL username
   password: '', // Replace with your MySQL password
   database: 'names_app', // Replace with your database name
+  waitForConnections: true,
+  connectionLimit: 10,            // Max connections in the pool
+  queueLimit: 0                   // Unlimited queue for waiting connections
 });
+
 
 // Connect to MySQL
 db.connect((err) => {
