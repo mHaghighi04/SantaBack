@@ -17,7 +17,7 @@ app.options('*', cors());
 app.use(morgan('combined'));
 
 // MySQL Database Connection
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: 'localhost', // Replace with your DB host
   user: 'root',      // Replace with your MySQL username
   password: '', // Replace with your MySQL password
@@ -26,6 +26,7 @@ const db = mysql.createConnection({
   connectionLimit: 10,            // Max connections in the pool
   queueLimit: 0                   // Unlimited queue for waiting connections
 });
+
 
 
 // Connect to MySQL
