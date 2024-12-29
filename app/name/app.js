@@ -4,7 +4,7 @@ document.getElementById('nameForm').addEventListener('submit', async (e) => {
     const name = document.getElementById('nameInput').value;
 
     try {
-      const response = await fetch('/api/names', {
+      const response = await fetch('https://santaback-xta6.onrender.com/api/names', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name }),
