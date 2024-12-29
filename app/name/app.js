@@ -23,7 +23,7 @@ document.getElementById('nameForm').addEventListener('submit', async (e) => {
 
   async function fetchNames() {
     try {
-      const response = await fetch('/api/names');
+      const response = await fetch('https://santaback-xta6.onrender.com/api/names');
       if (response.ok) {
         const names = await response.json();
         const nameList = document.getElementById('nameList');
